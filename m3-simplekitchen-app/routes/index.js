@@ -15,15 +15,15 @@ router.get('/', (req, res) => {
   res.render('index', { title: 'Home Page' });
 });
 
-router.get('/', (req, res) => {
+router.get("/register", (req, res) => {
   //res.send('It works!');
-  res.render('form', { title: 'Registration form' });
+  res.render("register", { title: "Register Page" });
 });
 
 router.get('/registrations', basic.check((req, res) => {
   Registration.find()
     .then((registrations) => {
-      res.render('index', { title: 'Listing registrations', registrations });
+      res.render('registrants', { title: 'Listing registrations', registrations });
     })
     .catch(() => { 
       res.send('Sorry! Something went wrong.'); 
